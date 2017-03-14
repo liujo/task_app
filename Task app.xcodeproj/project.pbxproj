@@ -17,6 +17,10 @@
 		269076D31E773718001E4BCA /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269076D21E773718001E4BCA /* MainTableViewController.swift */; };
 		269076D61E773A6B001E4BCA /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269076D51E773A6B001E4BCA /* SettingsTableViewController.swift */; };
 		269076D91E773B35001E4BCA /* NewTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269076D81E773B35001E4BCA /* NewTaskTableViewController.swift */; };
+		269076DC1E77F4A9001E4BCA /* EditTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269076DB1E77F4A9001E4BCA /* EditTaskTableViewController.swift */; };
+		269076DE1E77F4AF001E4BCA /* DueDateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269076DD1E77F4AF001E4BCA /* DueDateTableViewController.swift */; };
+		269076E01E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269076DF1E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift */; };
+		269076E21E77F54B001E4BCA /* CreateCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269076E11E77F54B001E4BCA /* CreateCategoryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		269076D21E773718001E4BCA /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		269076D51E773A6B001E4BCA /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		269076D81E773B35001E4BCA /* NewTaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskTableViewController.swift; sourceTree = "<group>"; };
+		269076DB1E77F4A9001E4BCA /* EditTaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTaskTableViewController.swift; sourceTree = "<group>"; };
+		269076DD1E77F4AF001E4BCA /* DueDateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DueDateTableViewController.swift; sourceTree = "<group>"; };
+		269076DF1E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCategoryTableViewController.swift; sourceTree = "<group>"; };
+		269076E11E77F54B001E4BCA /* CreateCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCategoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +144,10 @@
 			isa = PBXGroup;
 			children = (
 				269076D21E773718001E4BCA /* MainTableViewController.swift */,
-				269076DA1E77D81B001E4BCA /* New Task */,
+				269076D81E773B35001E4BCA /* NewTaskTableViewController.swift */,
+				269076DB1E77F4A9001E4BCA /* EditTaskTableViewController.swift */,
+				269076DD1E77F4AF001E4BCA /* DueDateTableViewController.swift */,
+				269076DF1E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift */,
 				269076D71E773B29001E4BCA /* Settings */,
 			);
 			name = "View Controllers";
@@ -146,16 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				269076D51E773A6B001E4BCA /* SettingsTableViewController.swift */,
+				269076E11E77F54B001E4BCA /* CreateCategoryTableViewController.swift */,
 			);
 			name = Settings;
-			sourceTree = "<group>";
-		};
-		269076DA1E77D81B001E4BCA /* New Task */ = {
-			isa = PBXGroup;
-			children = (
-				269076D81E773B35001E4BCA /* NewTaskTableViewController.swift */,
-			);
-			name = "New Task";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,8 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				269076E01E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift in Sources */,
 				269076D61E773A6B001E4BCA /* SettingsTableViewController.swift in Sources */,
 				269076D91E773B35001E4BCA /* NewTaskTableViewController.swift in Sources */,
+				269076E21E77F54B001E4BCA /* CreateCategoryTableViewController.swift in Sources */,
+				269076DC1E77F4A9001E4BCA /* EditTaskTableViewController.swift in Sources */,
+				269076DE1E77F4AF001E4BCA /* DueDateTableViewController.swift in Sources */,
 				269076A21E77362B001E4BCA /* AppDelegate.swift in Sources */,
 				269076D31E773718001E4BCA /* MainTableViewController.swift in Sources */,
 				269076AA1E77362B001E4BCA /* Task_app.xcdatamodeld in Sources */,
