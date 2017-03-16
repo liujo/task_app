@@ -20,6 +20,7 @@ class CategoryDataManager {
     func requestListOfCategories() -> [Category]? {
         
         let fetchRequest:NSFetchRequest<Category> = Category.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
         
         do{
             let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
@@ -32,31 +33,45 @@ class CategoryDataManager {
         
     }
     
-    func getCategoryObjectWith(title: String, color: UIColor) -> Category {
+    func createCategoryObjectInContext(title: String, color: UIColor, id: Int16) {
         
         let category: Category = NSEntityDescription.insertNewObject(forEntityName: entityName, into: DatabaseController.getContext()) as! Category
         category.title = title
         category.color = color
-        
-        return category
+        category.id = id
         
     }
     
-    func saveCategory(title: String, color: UIColor) {
+    func saveCategory(title: String, color: UIColor, id: Int16) {
         
-        let category = getCategoryObjectWith(title: title, color: color)
+        createCategoryObjectInContext(title: title, color: color, id: id)
         DatabaseController.saveContext()
     
     }
     
     func saveInitialFourCategories() {
         
-        let category1 = getCategoryObjectWith(title: "Personal", color: Colors.blue)
-        let category2 = getCategoryObjectWith(title: "Family", color: Colors.green)
-        let category3 = getCategoryObjectWith(title: "Work", color: Colors.orange)
-        let category4 = getCategoryObjectWith(title: "<3", color: Colors.red)
-        
+        createCategoryObjectInContext(title: "Personal", color: Colors.blue, id: 0)
+        createCategoryObjectInContext(title: "Family", color: Colors.green, id: 1)
+        createCategoryObjectInContext(title: "Work", color: Colors.orange, id: 2)
+        createCategoryObjectInContext(title: "<3", color: Colors.red, id: 3)
         DatabaseController.saveContext()
+        
+    }
+    
+    func getCategoryAt(index: Int) -> Category? {
+        
+        let fetchRequest:NSFetchRequest<Category> = Category.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+        
+        do{
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+            return searchResults[index]
+        }
+        catch{
+            print("Error: \(error)")
+            return nil
+        }
         
     }
 }

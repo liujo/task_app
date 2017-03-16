@@ -72,6 +72,5 @@ class MainTableViewController: UITableViewController {
         return 75
         
     }
-    
 
 }

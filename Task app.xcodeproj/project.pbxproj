@@ -25,8 +25,6 @@
 		26C231D41E7AA964007AAB8F /* CategoryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231D31E7AA964007AAB8F /* CategoryDataManager.swift */; };
 		26C231D61E7AA96E007AAB8F /* TaskDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231D51E7AA96E007AAB8F /* TaskDataManager.swift */; };
 		26C231DA1E7AAF9B007AAB8F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231D91E7AAF9B007AAB8F /* Colors.swift */; };
-		26C231E01E7ABCC9007AAB8F /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231DC1E7ABCC9007AAB8F /* Category+CoreDataClass.swift */; };
-		26C231E11E7ABCC9007AAB8F /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231DD1E7ABCC9007AAB8F /* Category+CoreDataProperties.swift */; };
 		26C231E21E7ABCC9007AAB8F /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231DE1E7ABCC9007AAB8F /* Task+CoreDataClass.swift */; };
 		26C231E31E7ABCC9007AAB8F /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231DF1E7ABCC9007AAB8F /* Task+CoreDataProperties.swift */; };
 		26C231E51E7AC4AB007AAB8F /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C231E41E7AC4AB007AAB8F /* TaskCell.xib */; };
@@ -35,6 +33,8 @@
 		26C231F01E7ADBFB007AAB8F /* UIView+squareToCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231EF1E7ADBFB007AAB8F /* UIView+squareToCircle.swift */; };
 		26C231F21E7AE553007AAB8F /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C231F11E7AE553007AAB8F /* CategoryCell.xib */; };
 		26C231F41E7AE5EA007AAB8F /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231F31E7AE5EA007AAB8F /* CategoryCell.swift */; };
+		26C231FE1E7AFC81007AAB8F /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231FC1E7AFC81007AAB8F /* Category+CoreDataClass.swift */; };
+		26C231FF1E7AFC81007AAB8F /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231FD1E7AFC81007AAB8F /* Category+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,8 +79,6 @@
 		26C231D31E7AA964007AAB8F /* CategoryDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryDataManager.swift; path = "Task app/CategoryDataManager.swift"; sourceTree = "<group>"; };
 		26C231D51E7AA96E007AAB8F /* TaskDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskDataManager.swift; path = "Task app/TaskDataManager.swift"; sourceTree = "<group>"; };
 		26C231D91E7AAF9B007AAB8F /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		26C231DC1E7ABCC9007AAB8F /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataClass.swift"; path = "Task app/Category+CoreDataClass.swift"; sourceTree = "<group>"; };
-		26C231DD1E7ABCC9007AAB8F /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "Task app/Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		26C231DE1E7ABCC9007AAB8F /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Task+CoreDataClass.swift"; path = "Task app/Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		26C231DF1E7ABCC9007AAB8F /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Task+CoreDataProperties.swift"; path = "Task app/Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		26C231E41E7AC4AB007AAB8F /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
@@ -89,6 +87,8 @@
 		26C231EF1E7ADBFB007AAB8F /* UIView+squareToCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+squareToCircle.swift"; sourceTree = "<group>"; };
 		26C231F11E7AE553007AAB8F /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		26C231F31E7AE5EA007AAB8F /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		26C231FC1E7AFC81007AAB8F /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataClass.swift"; path = "Task app/Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		26C231FD1E7AFC81007AAB8F /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "Task app/Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,8 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				26C231D31E7AA964007AAB8F /* CategoryDataManager.swift */,
-				26C231DC1E7ABCC9007AAB8F /* Category+CoreDataClass.swift */,
-				26C231DD1E7ABCC9007AAB8F /* Category+CoreDataProperties.swift */,
+				26C231FC1E7AFC81007AAB8F /* Category+CoreDataClass.swift */,
+				26C231FD1E7AFC81007AAB8F /* Category+CoreDataProperties.swift */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -415,14 +415,14 @@
 				269076E21E77F54B001E4BCA /* CreateCategoryTableViewController.swift in Sources */,
 				269076DC1E77F4A9001E4BCA /* EditTaskTableViewController.swift in Sources */,
 				26C231D21E7AA818007AAB8F /* DatabaseController.swift in Sources */,
-				26C231E11E7ABCC9007AAB8F /* Category+CoreDataProperties.swift in Sources */,
+				26C231FF1E7AFC81007AAB8F /* Category+CoreDataProperties.swift in Sources */,
 				26C231F01E7ADBFB007AAB8F /* UIView+squareToCircle.swift in Sources */,
 				26C231D61E7AA96E007AAB8F /* TaskDataManager.swift in Sources */,
 				269076DE1E77F4AF001E4BCA /* DueDateTableViewController.swift in Sources */,
 				26C231E31E7ABCC9007AAB8F /* Task+CoreDataProperties.swift in Sources */,
 				26C231E21E7ABCC9007AAB8F /* Task+CoreDataClass.swift in Sources */,
-				26C231E01E7ABCC9007AAB8F /* Category+CoreDataClass.swift in Sources */,
 				269076A21E77362B001E4BCA /* AppDelegate.swift in Sources */,
+				26C231FE1E7AFC81007AAB8F /* Category+CoreDataClass.swift in Sources */,
 				269076D31E773718001E4BCA /* MainTableViewController.swift in Sources */,
 				26C231D41E7AA964007AAB8F /* CategoryDataManager.swift in Sources */,
 				26C231F41E7AE5EA007AAB8F /* CategoryCell.swift in Sources */,

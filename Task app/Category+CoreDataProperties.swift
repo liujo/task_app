@@ -16,7 +16,8 @@ extension Category {
         return NSFetchRequest<Category>(entityName: "Category");
     }
 
-    @NSManaged public var title: String?
     @NSManaged public var color: NSObject?
+    @NSManaged public var title: String?
+    @NSManaged public var id: Int16
 
 }

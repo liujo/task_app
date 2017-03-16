@@ -17,12 +17,14 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var showAlertSwitch: UISwitch!
     
-    var category: Category = CategoryDataManager.sharedInstance.getCategoryObjectWith(title: "Personal", color: UIColor.blue) {
+    var category: Category? {
         
         didSet {
-            categoryCircle.backgroundColor = category.color as! UIColor?
-            categoryLabel.text = category.title
-            categoryLabel.textColor = category.color as! UIColor?
+            
+            categoryCircle.backgroundColor = category?.color as! UIColor?
+            categoryLabel.text = category?.title
+            categoryLabel.textColor = category?.color as! UIColor?
+            
         }
         
     }
@@ -53,12 +55,23 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        category = CategoryDataManager.sharedInstance.getCategoryAt(index: 0)
+        
+    }
+    
     //MARK: - NavBar button actions
     
     @IBAction func saveButtonAction(_ sender: Any) {
         
-        TaskDataManager.sharedInstance.saveTask(title: titleTextField.text!, dueDate: NSDate(), showNotification: false, category: category)
-        self.dismiss(animated: true, completion: nil)
+        if category != nil {
+            
+            TaskDataManager.sharedInstance.saveTask(title: titleTextField.text!, dueDate: NSDate(), showNotification: false, category: category!)
+            self.dismiss(animated: true, completion: nil)
+            
+        }
         
     }
 
@@ -82,5 +95,32 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func showAlertSwitchAction(_ sender: UISwitch) {
         showAlert = sender.isOn
     }
-
+    
+    //MARK: - prepareForSegue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "chooseCategoryVC" {
+            
+            let vc = segue.destination as! ChooseCategoryTableViewController
+            if let id = category?.id {
+                
+                vc.index = Int(id)
+                
+            }
+            
+        }
+        
+    }
+    
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+        
+        print("unwind segue")
+        if let sourceVC = segue.source as? ChooseCategoryTableViewController {
+            
+            category = CategoryDataManager.sharedInstance.getCategoryAt(index: sourceVC.index)
+            
+        }
+        
+    }
 }
