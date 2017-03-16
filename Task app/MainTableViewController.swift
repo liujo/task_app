@@ -89,6 +89,8 @@ class MainTableViewController: UITableViewController {
         cell.title.text = task.title
         if let date = task.dueDate {
             cell.date.text = Utils.sharedInstance.getFormattedDate(date: date)
+            cell.date.isHidden = false
+            cell.circleSeparator.isHidden = false
         } else {
             cell.date.text = ""
             cell.date.isHidden = true

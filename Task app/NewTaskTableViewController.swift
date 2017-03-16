@@ -25,6 +25,7 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
             categoryLabel.text = category?.title
             categoryLabel.textColor = category?.color as! UIColor?
             
+            
         }
         
     }

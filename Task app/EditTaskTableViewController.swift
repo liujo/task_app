@@ -13,18 +13,27 @@ class EditTaskTableViewController: UITableViewController, UITextFieldDelegate {
     var task: Task!
     
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var categoryCircle: UIView!
+    @IBOutlet weak var categoryCircle: UIImageView!
+    @IBOutlet weak var completeButtonCircleImage: UIImageView!
+    @IBOutlet weak var completeButtonFullCircleImage: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var showAlertSwitch: UISwitch!
-
+    
     var category: Category? {
         
         didSet {
             
-            categoryCircle.backgroundColor = category?.color as! UIColor?
+            completeButtonCircleImage.tintColor = category?.color as! UIColor?
+            categoryCircle.tintColor = category?.color as! UIColor?
             categoryLabel.text = category?.title
             categoryLabel.textColor = category?.color as! UIColor?
+            
+            if task.isCompleted {
+                completeButtonFullCircleImage.tintColor = category?.color as! UIColor?
+            } else {
+                completeButtonFullCircleImage.tintColor = UIColor.clear
+            }
             
         }
         
@@ -49,10 +58,10 @@ class EditTaskTableViewController: UITableViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         titleTextField.delegate = self
         titleTextField.text = task.title
-        categoryCircle = categoryCircle.squareToCircle()
         category = task.category
         dueDate = task.dueDate
         showAlertSwitch.isOn = task.showAlert
@@ -72,7 +81,20 @@ class EditTaskTableViewController: UITableViewController, UITextFieldDelegate {
         
     }
     
-    //MARK: - NavBar button methods
+    //MARK: - button methods
+    
+    @IBAction func confirmButtonAction(_ sender: Any) {
+        
+        if task.isCompleted {
+            completeButtonFullCircleImage.tintColor = UIColor.clear
+            task.isCompleted = false
+        } else {
+            completeButtonFullCircleImage.tintColor = category?.color as! UIColor?
+            task.isCompleted = true
+        }
+        
+    }
+    
 
     @IBAction func doneButtonAction(_ sender: Any) {
         
