@@ -12,7 +12,7 @@ import CoreData
 class MainTableViewController: UITableViewController {
     
     var tasks = [Task]()
-
+    var tappedRow = Int()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -86,5 +86,24 @@ class MainTableViewController: UITableViewController {
         }
         
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tappedRow = indexPath.row
+        self.performSegue(withIdentifier: "editTaskVC", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
+    //MARK: - prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "editTaskVC" {
+            
+            let navController = segue.destination as! UINavigationController
+            let vc = navController.topViewController as! EditTaskTableViewController
+            vc.task = tasks[tappedRow]
+            
+        }
+    }
 }

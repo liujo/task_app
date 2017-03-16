@@ -169,7 +169,6 @@
                         <outlet property="categoryCircle" destination="c75-ig-sZU" id="yu0-6h-iA4"/>
                         <outlet property="categoryLabel" destination="M8d-JV-r8D" id="e6n-ao-a8D"/>
                         <outlet property="dueDateLabel" destination="y5l-Zm-K4b" id="R5B-dU-2vb"/>
-                        <outlet property="showAlertSwitch" destination="qvj-03-G1k" id="gLY-zb-wOh"/>
                         <outlet property="titleTextField" destination="TQJ-lq-T2n" id="xVa-1L-sh0"/>
                     </connections>
                 </tableViewController>
@@ -356,39 +355,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="PAv-Ag-jxg">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PAv-Ag-jxg" id="OxF-Qd-al4">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PF-Rv-N7j">
-                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNu-wE-UGq">
-                                            <rect key="frame" x="317" y="12" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="CNu-wE-UGq" firstAttribute="centerY" secondItem="OxF-Qd-al4" secondAttribute="centerY" id="NpH-GL-2vn"/>
-                                        <constraint firstAttribute="trailing" secondItem="CNu-wE-UGq" secondAttribute="trailing" constant="16" id="WCj-j2-Vuz"/>
-                                        <constraint firstItem="3PF-Rv-N7j" firstAttribute="centerY" secondItem="OxF-Qd-al4" secondAttribute="centerY" id="xfz-Wg-wBS"/>
-                                        <constraint firstItem="3PF-Rv-N7j" firstAttribute="leading" secondItem="OxF-Qd-al4" secondAttribute="leading" constant="16" id="yO3-W2-M3h"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="XSK-9K-AdE" kind="presentation" trigger="accessoryAction" modalTransitionStyle="crossDissolve" id="kXs-gg-Sj5"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="EJW-HO-QzY" id="aaI-vR-e0i"/>
                             <outlet property="delegate" destination="EJW-HO-QzY" id="Sqv-DC-L4u"/>
@@ -409,6 +375,9 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <segue destination="XSK-9K-AdE" kind="presentation" identifier="editTaskVC" modalTransitionStyle="crossDissolve" id="UEs-8Z-cfx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcU-68-TuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -417,7 +386,7 @@
         <!--Edit Task-->
         <scene sceneID="04z-Qo-VxK">
             <objects>
-                <tableViewController id="VNC-R6-L98" sceneMemberID="viewController">
+                <tableViewController id="VNC-R6-L98" customClass="EditTaskTableViewController" customModule="Task_app" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="gJZ-vU-TGQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -436,7 +405,7 @@
                                                     <rect key="frame" x="16" y="8" width="343" height="27"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -485,7 +454,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="3xd-mO-pkz" kind="show" id="gfe-su-fEi"/>
+                                            <segue destination="3xd-mO-pkz" kind="show" identifier="chooseCategoryVC" id="gfe-su-fEi"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="rPq-zS-tlX">
@@ -516,7 +485,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="3Zg-RW-FKC" kind="show" id="Mx8-3A-cb7"/>
+                                            <segue destination="3Zg-RW-FKC" kind="show" identifier="dueDateVC" id="Mx8-3A-cb7"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="gHU-J3-ll8">
@@ -553,10 +522,25 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Edit Task" id="RWF-15-5T2">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="6J8-lg-UQO">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="VNC-R6-L98" id="T6v-Wm-0Oi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="u97-wI-ji8">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deleteButtonAction:" destination="VNC-R6-L98" id="KhS-gp-mFu"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="categoryCircle" destination="hi1-R4-C9K" id="VmZ-Kj-khZ"/>
+                        <outlet property="categoryLabel" destination="5fZ-hO-5fe" id="R0i-cQ-z3D"/>
+                        <outlet property="dueDateLabel" destination="em0-2d-dFh" id="NyS-L8-ZP5"/>
+                        <outlet property="showAlertSwitch" destination="KlA-d7-WRf" id="mQS-w1-NZh"/>
+                        <outlet property="titleTextField" destination="e6P-CB-MGx" id="W4K-CM-ahC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5An-ux-iBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1133,7 +1117,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Kgk-nW-hPz"/>
-        <segue reference="9A9-vz-o1V"/>
-        <segue reference="PpE-oz-can"/>
+        <segue reference="Mx8-3A-cb7"/>
+        <segue reference="gfe-su-fEi"/>
     </inferredMetricsTieBreakers>
 </document>

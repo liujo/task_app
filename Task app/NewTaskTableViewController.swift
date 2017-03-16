@@ -45,8 +45,6 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
         }
         
     }
- 
-    var showAlert = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,13 +66,13 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    //MARK: - NavBar button actions
+    //MARK: - NavBar button methods
     
     @IBAction func saveButtonAction(_ sender: Any) {
         
         if category != nil {
             
-            TaskDataManager.sharedInstance.saveTask(title: titleTextField.text!, dueDate: dueDate, showAlert: showAlert, category: category!)
+            TaskDataManager.sharedInstance.saveTask(title: titleTextField.text!, dueDate: dueDate, showAlert: showAlertSwitch.isOn, category: category!)
             self.dismiss(animated: true, completion: nil)
             
         }
@@ -94,12 +92,6 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
         
-    }
-    
-    //MARK: - UISwitch action
-    
-    @IBAction func showAlertSwitchAction(_ sender: UISwitch) {
-        showAlert = sender.isOn
     }
     
     //MARK: - prepareForSegue

@@ -45,6 +45,16 @@ class TaskDataManager {
         
     }
     
+    func edit(task: Task, withAttributes title: String, dueDate: Date?, showAlert: Bool, category: Category) {
+        
+        task.title = title
+        task.dueDate = dueDate
+        task.showAlert = showAlert
+        task.category = category
+        DatabaseController.saveContext()
+        
+    }
+    
     func deleteTask(task: Task) {
         
         DatabaseController.getContext().delete(task)
