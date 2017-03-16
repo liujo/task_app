@@ -73,5 +73,18 @@ class MainTableViewController: UITableViewController {
         return 75
         
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            
+            let taskToDelete = tasks[indexPath.row]
+            tasks.remove(at: indexPath.row)
+            TaskDataManager.sharedInstance.deleteTask(task: taskToDelete)
+            self.tableView.deleteRows(at: [indexPath], with: .left)
+            
+        }
+        
+    }
 
 }

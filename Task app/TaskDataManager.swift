@@ -44,4 +44,11 @@ class TaskDataManager {
         DatabaseController.saveContext()
         
     }
+    
+    func deleteTask(task: Task) {
+        
+        DatabaseController.getContext().delete(task)
+        DatabaseController.saveContext()
+        
+    }
 }
