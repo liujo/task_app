@@ -8,30 +8,53 @@
 
 import UIKit
 
+protocol DueDateVCDelegate {
+    
+    func updateDueDate(date: Date?)
+    
+}
+
 class DueDateTableViewController: UITableViewController {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
+    var delegate: DueDateVCDelegate?
     
-    var dueDate: Date? {
-        
-        didSet {
-            
-            dateLabel.text = Utils.sharedInstance.getFormattedDate(date: dueDate!)
-            
-        }
-        
-    }
+    var dueDate: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if dueDate == nil {
+            dueDate = Date()
+        }
+        
         dateLabel.text = Utils.sharedInstance.getFormattedDate(date: dueDate!)
+        datePicker.date = dueDate!
+        
+    }
+    
+    @IBAction func datePickerAction(_ sender: UIDatePicker) {
+        
+        dueDate = sender.date
+        dateLabel.text = Utils.sharedInstance.getFormattedDate(date: dueDate!)
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == 1 {
+            
+            dueDate = nil
+            saveButtonAction(self)
+            
+        }
         
     }
 
     @IBAction func saveButtonAction(_ sender: Any) {
         
+        delegate?.updateDueDate(date: dueDate)
         self.navigationController?.popViewController(animated: true)
         
     }

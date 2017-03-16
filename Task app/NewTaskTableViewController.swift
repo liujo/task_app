@@ -32,6 +32,7 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
     var dueDate: Date? {
         
         didSet {
+            
             if dueDate != nil {
                 
                 dueDateLabel.text = Utils.sharedInstance.getFormattedDate(date: dueDate!)
@@ -56,6 +57,13 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        titleTextField.becomeFirstResponder()
+        
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -66,7 +74,7 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
         
         if category != nil {
             
-            TaskDataManager.sharedInstance.saveTask(title: titleTextField.text!, dueDate: NSDate(), showNotification: false, category: category!)
+            TaskDataManager.sharedInstance.saveTask(title: titleTextField.text!, dueDate: dueDate, showAlert: showAlert, category: category!)
             self.dismiss(animated: true, completion: nil)
             
         }
@@ -111,7 +119,12 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
         } else if segue.identifier == "dueDateVC" {
             
             let vc = segue.destination as! DueDateTableViewController
-            vc.dueDate = dueDate
+            vc.delegate = self
+            if dueDate != nil {
+                
+                vc.dueDate = dueDate
+                
+            }
             
         }
         
@@ -120,7 +133,7 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         
-        self.resignFirstResponder()
+        self.view.endEditing(true)
         
     }
     
@@ -131,6 +144,14 @@ extension NewTaskTableViewController: ChooseCategoryVCDelegate {
     func updateCategoryIndex(index: Int) {
         self.category = CategoryDataManager.sharedInstance.getCategoryAt(index: index)
         
+    }
+    
+}
+
+extension NewTaskTableViewController: DueDateVCDelegate {
+    
+    func updateDueDate(date: Date?) {
+        self.dueDate = date
     }
     
 }

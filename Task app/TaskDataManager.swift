@@ -32,12 +32,12 @@ class TaskDataManager {
         
     }
     
-    func saveTask(title: String, dueDate: NSDate, showNotification: Bool, category: Category) {
+    func saveTask(title: String, dueDate: Date?, showAlert: Bool, category: Category) {
         
         let task: Task = NSEntityDescription.insertNewObject(forEntityName: entityName, into: DatabaseController.getContext()) as! Task
         task.title = title
         task.dueDate = dueDate
-        task.showNotification = showNotification
+        task.showAlert = showAlert
         task.category = category
         task.isCompleted = false
         

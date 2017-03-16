@@ -50,7 +50,8 @@ class MainTableViewController: UITableViewController {
         let task = tasks[indexPath.row]
         cell.title.text = task.title
         if let date = task.dueDate {
-            cell.date.text = Utils.sharedInstance.getFormattedNSDate(date: date)
+            //cell.date.text = Utils.sharedInstance.getFormattedNSDate(date: date)
+            cell.date.text = Utils.sharedInstance.getFormattedDate(date: date)
         } else {
             cell.date.text = ""
             cell.date.isHidden = true

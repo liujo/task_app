@@ -17,8 +17,8 @@ extension Task {
     }
 
     @NSManaged public var title: String?
-    @NSManaged public var dueDate: NSDate?
-    @NSManaged public var showNotification: Bool
+    @NSManaged public var dueDate: Date?
+    @NSManaged public var showAlert: Bool
     @NSManaged public var isCompleted: Bool
     @NSManaged public var category: Category?
 
