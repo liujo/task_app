@@ -7,21 +7,60 @@
 //
 
 import UIKit
+import CoreData
 
-class NewTaskTableViewController: UITableViewController {
+class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var categoryCircle: UIView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var dueDateLabel: UILabel!
+    @IBOutlet weak var showAlertSwitch: UISwitch!
+    
+    var category: Category = CategoryDataManager.sharedInstance.getCategoryObjectWith(title: "Personal", color: UIColor.blue) {
+        
+        didSet {
+            categoryCircle.backgroundColor = category.color as! UIColor?
+            categoryLabel.text = category.title
+            categoryLabel.textColor = category.color as! UIColor?
+        }
+        
+    }
+    
+    var dueDate: Date? {
+        
+        didSet {
+            if dueDate != nil {
+                
+                dueDateLabel.text = Utils.sharedInstance.getFormattedDate(date: dueDate!)
+                
+            } else {
+                
+                dueDateLabel.text = ""
+                
+            }
+        }
+        
+    }
+ 
+    var showAlert = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        titleTextField.delegate = self
+        categoryCircle = categoryCircle.squareToCircle()
+        
     }
+    
+    //MARK: - NavBar button actions
     
     @IBAction func saveButtonAction(_ sender: Any) {
         
+        TaskDataManager.sharedInstance.saveTask(title: titleTextField.text!, dueDate: NSDate(), showNotification: false, category: category)
         self.dismiss(animated: true, completion: nil)
         
     }
-    
 
     @IBAction func cancelButtonAction(_ sender: Any) {
         
@@ -29,5 +68,19 @@ class NewTaskTableViewController: UITableViewController {
         
     }
     
+    //MARK: - UITextField delegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
+        
+    }
+    
+    //MARK: - UISwitch action
+    
+    @IBAction func showAlertSwitchAction(_ sender: UISwitch) {
+        showAlert = sender.isOn
+    }
 
 }
