@@ -10,9 +10,23 @@ import UIKit
 
 class DueDateTableViewController: UITableViewController {
 
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    var dueDate: Date? {
+        
+        didSet {
+            
+            dateLabel.text = Utils.sharedInstance.getFormattedDate(date: dueDate!)
+            
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        dateLabel.text = Utils.sharedInstance.getFormattedDate(date: dueDate!)
         
     }
 

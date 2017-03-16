@@ -99,8 +99,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mar 12, 2017 12:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5l-Zm-K4b">
-                                                    <rect key="frame" x="195" y="11" width="145" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5l-Zm-K4b">
+                                                    <rect key="frame" x="340" y="21.5" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -130,7 +130,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qvj-03-G1k">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qvj-03-G1k">
                                                     <rect key="frame" x="310" y="7" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="showAlertSwitchAction:" destination="O9x-7Z-iia" eventType="valueChanged" id="jeX-tY-Ctz"/>
@@ -281,6 +281,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dateLabel" destination="Xyg-bE-DTT" id="CMk-wl-rev"/>
+                        <outlet property="datePicker" destination="r9D-gC-JqO" id="GLA-6X-wci"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="STu-2o-gNN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -333,7 +337,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Category" id="1Da-9e-o0G"/>
                     <connections>
-                        <segue destination="eVl-fu-aNR" kind="unwind" unwindAction="unwindSegueWithSegue:" id="mMc-7c-frw"/>
+                        <segue destination="eVl-fu-aNR" kind="unwind" identifier="" unwindAction="unwindSegueWithSegue:" id="mMc-7c-frw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L3v-L9-Ckm" userLabel="First Responder" sceneMemberID="firstResponder"/>

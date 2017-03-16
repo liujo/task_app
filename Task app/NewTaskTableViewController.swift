@@ -52,14 +52,12 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
 
         titleTextField.delegate = self
         categoryCircle = categoryCircle.squareToCircle()
+        category = CategoryDataManager.sharedInstance.getCategoryAt(index: 0)
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        category = CategoryDataManager.sharedInstance.getCategoryAt(index: 0)
-        
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     //MARK: - NavBar button actions
@@ -103,24 +101,36 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
         if segue.identifier == "chooseCategoryVC" {
             
             let vc = segue.destination as! ChooseCategoryTableViewController
+            vc.delegate = self
             if let id = category?.id {
                 
                 vc.index = Int(id)
                 
             }
             
+        } else if segue.identifier == "dueDateVC" {
+            
+            let vc = segue.destination as! DueDateTableViewController
+            vc.dueDate = dueDate
+            
         }
         
     }
     
-    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
         
-        print("unwind segue")
-        if let sourceVC = segue.source as? ChooseCategoryTableViewController {
-            
-            category = CategoryDataManager.sharedInstance.getCategoryAt(index: sourceVC.index)
-            
-        }
+        self.resignFirstResponder()
         
     }
+    
+}
+
+extension NewTaskTableViewController: ChooseCategoryVCDelegate {
+    
+    func updateCategoryIndex(index: Int) {
+        self.category = CategoryDataManager.sharedInstance.getCategoryAt(index: index)
+        
+    }
+    
 }

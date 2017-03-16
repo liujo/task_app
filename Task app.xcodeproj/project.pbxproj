@@ -175,10 +175,10 @@
 			isa = PBXGroup;
 			children = (
 				269076D21E773718001E4BCA /* MainTableViewController.swift */,
-				269076D81E773B35001E4BCA /* NewTaskTableViewController.swift */,
 				269076DB1E77F4A9001E4BCA /* EditTaskTableViewController.swift */,
-				269076DD1E77F4AF001E4BCA /* DueDateTableViewController.swift */,
+				269076D81E773B35001E4BCA /* NewTaskTableViewController.swift */,
 				269076DF1E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift */,
+				269076DD1E77F4AF001E4BCA /* DueDateTableViewController.swift */,
 				269076D71E773B29001E4BCA /* Settings */,
 			);
 			name = Controller;

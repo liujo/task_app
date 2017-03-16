@@ -8,8 +8,15 @@
 
 import UIKit
 
+protocol ChooseCategoryVCDelegate {
+    
+    func updateCategoryIndex(index: Int)
+    
+}
+
 class ChooseCategoryTableViewController: UITableViewController {
     
+    var delegate: ChooseCategoryVCDelegate?
     var categories = [Category]()
     var index = Int()
 
@@ -58,13 +65,9 @@ class ChooseCategoryTableViewController: UITableViewController {
         cell.titleLabel.textColor = category.color as! UIColor?
         
         if index == indexPath.row {
-            
             cell.accessoryType = .checkmark
-            
         } else {
-            
             cell.accessoryType = .none
-            
         }
 
         return cell
@@ -72,12 +75,18 @@ class ChooseCategoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        index = indexPath.row
+        if indexPath.row != index {
+            
+            let tappedCell = tableView.cellForRow(at: indexPath)
+            tappedCell?.accessoryType = UITableViewCellAccessoryType.checkmark
+            tableView.cellForRow(at: IndexPath(row: index, section: 0))?.accessoryType = .none
+            index = indexPath.row
+            delegate?.updateCategoryIndex(index: index)
+            
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        tableView.reloadData()
-    }
 
 }
