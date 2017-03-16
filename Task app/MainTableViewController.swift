@@ -18,6 +18,8 @@ class MainTableViewController: UITableViewController {
 
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "TaskCell", bundle: nil), forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName: "CompletedTaskCell", bundle: nil), forCellReuseIdentifier: "completedCell")
+        tableView.register(UINib(nibName: "OverdueCell", bundle: nil), forCellReuseIdentifier: "overdueCell")
         
     }
     
@@ -45,27 +47,73 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TaskCell
-        
         let task = tasks[indexPath.row]
+        
+        if task.isCompleted {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "completedCell", for: indexPath) as! CompletedTaskCell
+            cell.title.text = task.title
+            cell.category.text = task.category?.title
+            if let color = task.category?.color as? UIColor {
+                cell.fullCircleImage.tintColor = color
+                cell.circleImage.tintColor = color
+            }
+            cell.completeButton.tag = indexPath.row
+            cell.completeButton.addTarget(self, action: #selector(uncompleteTask), for: .touchUpInside)
+            
+            return cell
+            
+        } else if let dueDate = task.dueDate {
+            
+            if dueDate.timeIntervalSince1970 < Date().timeIntervalSince1970 {
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: "overdueCell", for: indexPath) as! OverdueCell
+                cell.title.text = task.title
+                cell.category.text = task.category?.title
+                if let color = task.category?.color as? UIColor {
+                    cell.category.textColor = color
+                    cell.circleImage.tintColor = color
+                }
+                cell.dueDate.text = Utils.sharedInstance.getFormattedDate(date: dueDate)
+                cell.completeButton.tag = indexPath.row
+                cell.completeButton.addTarget(self, action: #selector(completeTask), for: .touchUpInside)
+
+                return cell
+                
+            }
+            
+            
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TaskCell
         cell.title.text = task.title
         if let date = task.dueDate {
-            //cell.date.text = Utils.sharedInstance.getFormattedNSDate(date: date)
             cell.date.text = Utils.sharedInstance.getFormattedDate(date: date)
         } else {
             cell.date.text = ""
             cell.date.isHidden = true
             cell.circleSeparator.isHidden = true
         }
-
+        
         cell.category.text = task.category?.title
         
         if let color = task.category?.color as? UIColor {
             cell.category.textColor = color
             cell.completeButtonImage.tintColor = color
         }
-
+        
+        if let date = task.dueDate {
+            cell.date.text = Utils.sharedInstance.getFormattedDate(date: date)
+        } else {
+            cell.date.text = ""
+            cell.date.isHidden = true
+            cell.circleSeparator.isHidden = true
+        }
+        cell.completeButton.tag = indexPath.row
+        cell.completeButton.addTarget(self, action: #selector(completeTask), for: .touchUpInside)
+        
         return cell
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -92,6 +140,22 @@ class MainTableViewController: UITableViewController {
         tappedRow = indexPath.row
         self.performSegue(withIdentifier: "editTaskVC", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
+    //MARK: - task completion methods
+    
+    func completeTask(sender: UIButton) {
+        
+        TaskDataManager.sharedInstance.complete(task: tasks[sender.tag])
+        tableView.reloadData()
+        
+    }
+    
+    func uncompleteTask(sender: UIButton) {
+        
+        TaskDataManager.sharedInstance.uncomplete(task: tasks[sender.tag])
+        tableView.reloadData()
         
     }
     

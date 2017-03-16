@@ -55,6 +55,20 @@ class TaskDataManager {
         
     }
     
+    func complete(task: Task) {
+        
+        task.isCompleted = true
+        DatabaseController.saveContext()
+        
+    }
+    
+    func uncomplete(task: Task) {
+        
+        task.isCompleted = false
+        DatabaseController.saveContext()
+        
+    }
+    
     func deleteTask(task: Task) {
         
         DatabaseController.getContext().delete(task)

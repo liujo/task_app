@@ -21,6 +21,8 @@
 		269076DE1E77F4AF001E4BCA /* DueDateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269076DD1E77F4AF001E4BCA /* DueDateTableViewController.swift */; };
 		269076E01E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269076DF1E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift */; };
 		269076E21E77F54B001E4BCA /* CreateCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269076E11E77F54B001E4BCA /* CreateCategoryTableViewController.swift */; };
+		269F32E81E7B44DE0080A77E /* OverdueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F32E61E7B44DE0080A77E /* OverdueCell.swift */; };
+		269F32E91E7B44DE0080A77E /* OverdueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269F32E71E7B44DE0080A77E /* OverdueCell.xib */; };
 		26C231D21E7AA818007AAB8F /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231D11E7AA818007AAB8F /* DatabaseController.swift */; };
 		26C231D41E7AA964007AAB8F /* CategoryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231D31E7AA964007AAB8F /* CategoryDataManager.swift */; };
 		26C231D61E7AA96E007AAB8F /* TaskDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231D51E7AA96E007AAB8F /* TaskDataManager.swift */; };
@@ -35,6 +37,8 @@
 		26C231F41E7AE5EA007AAB8F /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231F31E7AE5EA007AAB8F /* CategoryCell.swift */; };
 		26C231FE1E7AFC81007AAB8F /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231FC1E7AFC81007AAB8F /* Category+CoreDataClass.swift */; };
 		26C231FF1E7AFC81007AAB8F /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231FD1E7AFC81007AAB8F /* Category+CoreDataProperties.swift */; };
+		26D5E8921E7B3A540032E309 /* CompletedTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D5E8901E7B3A540032E309 /* CompletedTaskCell.swift */; };
+		26D5E8931E7B3A540032E309 /* CompletedTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D5E8911E7B3A540032E309 /* CompletedTaskCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,8 @@
 		269076DD1E77F4AF001E4BCA /* DueDateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DueDateTableViewController.swift; sourceTree = "<group>"; };
 		269076DF1E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCategoryTableViewController.swift; sourceTree = "<group>"; };
 		269076E11E77F54B001E4BCA /* CreateCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCategoryTableViewController.swift; sourceTree = "<group>"; };
+		269F32E61E7B44DE0080A77E /* OverdueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverdueCell.swift; sourceTree = "<group>"; };
+		269F32E71E7B44DE0080A77E /* OverdueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverdueCell.xib; sourceTree = "<group>"; };
 		26C231D11E7AA818007AAB8F /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseController.swift; path = "Task app/DatabaseController.swift"; sourceTree = "<group>"; };
 		26C231D31E7AA964007AAB8F /* CategoryDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryDataManager.swift; path = "Task app/CategoryDataManager.swift"; sourceTree = "<group>"; };
 		26C231D51E7AA96E007AAB8F /* TaskDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskDataManager.swift; path = "Task app/TaskDataManager.swift"; sourceTree = "<group>"; };
@@ -89,6 +95,8 @@
 		26C231F31E7AE5EA007AAB8F /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		26C231FC1E7AFC81007AAB8F /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataClass.swift"; path = "Task app/Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		26C231FD1E7AFC81007AAB8F /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "Task app/Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		26D5E8901E7B3A540032E309 /* CompletedTaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedTaskCell.swift; sourceTree = "<group>"; };
+		26D5E8911E7B3A540032E309 /* CompletedTaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletedTaskCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +201,15 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		269F32EA1E7B44E20080A77E /* OverdueCell */ = {
+			isa = PBXGroup;
+			children = (
+				269F32E71E7B44DE0080A77E /* OverdueCell.xib */,
+				269F32E61E7B44DE0080A77E /* OverdueCell.swift */,
+			);
+			name = OverdueCell;
+			sourceTree = "<group>";
+		};
 		26C231BE1E79B831007AAB8F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,7 +255,9 @@
 			isa = PBXGroup;
 			children = (
 				26C231E91E7AC824007AAB8F /* TaskCell */,
+				26D5E8941E7B3A5E0032E309 /* CompletedTaskCell */,
 				26C231F51E7AE5ED007AAB8F /* CategoryCell */,
+				269F32EA1E7B44E20080A77E /* OverdueCell */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -267,6 +286,15 @@
 				26C231F31E7AE5EA007AAB8F /* CategoryCell.swift */,
 			);
 			name = CategoryCell;
+			sourceTree = "<group>";
+		};
+		26D5E8941E7B3A5E0032E309 /* CompletedTaskCell */ = {
+			isa = PBXGroup;
+			children = (
+				26D5E8911E7B3A540032E309 /* CompletedTaskCell.xib */,
+				26D5E8901E7B3A540032E309 /* CompletedTaskCell.swift */,
+			);
+			name = CompletedTaskCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,6 +411,8 @@
 				26C231E51E7AC4AB007AAB8F /* TaskCell.xib in Resources */,
 				269076AF1E77362B001E4BCA /* LaunchScreen.storyboard in Resources */,
 				269076AC1E77362B001E4BCA /* Assets.xcassets in Resources */,
+				26D5E8931E7B3A540032E309 /* CompletedTaskCell.xib in Resources */,
+				269F32E91E7B44DE0080A77E /* OverdueCell.xib in Resources */,
 				269076A71E77362B001E4BCA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26D5E8921E7B3A540032E309 /* CompletedTaskCell.swift in Sources */,
 				269076E01E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift in Sources */,
 				269076D61E773A6B001E4BCA /* SettingsTableViewController.swift in Sources */,
 				269076D91E773B35001E4BCA /* NewTaskTableViewController.swift in Sources */,
@@ -423,6 +454,7 @@
 				26C231E21E7ABCC9007AAB8F /* Task+CoreDataClass.swift in Sources */,
 				269076A21E77362B001E4BCA /* AppDelegate.swift in Sources */,
 				26C231FE1E7AFC81007AAB8F /* Category+CoreDataClass.swift in Sources */,
+				269F32E81E7B44DE0080A77E /* OverdueCell.swift in Sources */,
 				269076D31E773718001E4BCA /* MainTableViewController.swift in Sources */,
 				26C231D41E7AA964007AAB8F /* CategoryDataManager.swift in Sources */,
 				26C231F41E7AE5EA007AAB8F /* CategoryCell.swift in Sources */,
