@@ -132,9 +132,6 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qvj-03-G1k">
                                                     <rect key="frame" x="310" y="7" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="showAlertSwitchAction:" destination="O9x-7Z-iia" eventType="valueChanged" id="jeX-tY-Ctz"/>
-                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -169,6 +166,7 @@
                         <outlet property="categoryCircle" destination="c75-ig-sZU" id="yu0-6h-iA4"/>
                         <outlet property="categoryLabel" destination="M8d-JV-r8D" id="e6n-ao-a8D"/>
                         <outlet property="dueDateLabel" destination="y5l-Zm-K4b" id="R5B-dU-2vb"/>
+                        <outlet property="showAlertSwitch" destination="qvj-03-G1k" id="5PQ-ra-qAJ"/>
                         <outlet property="titleTextField" destination="TQJ-lq-T2n" id="xVa-1L-sh0"/>
                     </connections>
                 </tableViewController>
@@ -1117,7 +1115,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Kgk-nW-hPz"/>
-        <segue reference="Mx8-3A-cb7"/>
-        <segue reference="gfe-su-fEi"/>
+        <segue reference="9A9-vz-o1V"/>
+        <segue reference="PpE-oz-can"/>
     </inferredMetricsTieBreakers>
 </document>

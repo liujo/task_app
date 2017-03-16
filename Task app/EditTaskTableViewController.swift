@@ -89,7 +89,10 @@ class EditTaskTableViewController: UITableViewController, UITextFieldDelegate {
         
         let alert = UIAlertController(title: "Delete task?", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
-            //do shit
+            
+            TaskDataManager.sharedInstance.deleteTask(task: self.task)
+            self.dismiss(animated: true, completion: nil)
+            
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
