@@ -14,6 +14,9 @@ class MainTableViewController: UITableViewController {
     
     var tasks = [Task]()
     var tappedRow = Int()
+    
+    let notificationName = Notification.Name(StaticStrings.refreshMainVCNotificationIdentifier)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +30,13 @@ class MainTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: notificationName, object: nil)
+        refresh()
+        
+    }
+
+    func refresh() {
+        
         if let data = TaskDataManager.sharedInstance.requestListOfTasks() {
             
             tasks = data
@@ -35,8 +45,7 @@ class MainTableViewController: UITableViewController {
         
     }
 
-
-    // MARK: - Table view data source
+    // : - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -172,5 +181,12 @@ class MainTableViewController: UITableViewController {
             vc.task = tasks[tappedRow]
             
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        NotificationCenter.default.removeObserver(self, name: notificationName, object: nil);
+        
     }
 }

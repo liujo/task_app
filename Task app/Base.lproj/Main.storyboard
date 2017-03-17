@@ -703,7 +703,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="8Tn-oa-OEU" kind="presentation" identifier="editCategoryVC" modalTransitionStyle="crossDissolve" id="UqF-xb-0FQ"/>
+                        <segue destination="8Tn-oa-OEU" kind="presentation" identifier="editCategoryVC" id="UqF-xb-0FQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Hi-2a-yBx" userLabel="First Responder" sceneMemberID="firstResponder"/>

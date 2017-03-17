@@ -21,6 +21,7 @@
 		269076DE1E77F4AF001E4BCA /* DueDateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269076DD1E77F4AF001E4BCA /* DueDateTableViewController.swift */; };
 		269076E01E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269076DF1E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift */; };
 		269076E21E77F54B001E4BCA /* CreateCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269076E11E77F54B001E4BCA /* CreateCategoryTableViewController.swift */; };
+		269E496A1E7C185200837B05 /* GlobalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E49691E7C185200837B05 /* GlobalTimer.swift */; };
 		269F32E81E7B44DE0080A77E /* OverdueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F32E61E7B44DE0080A77E /* OverdueCell.swift */; };
 		269F32E91E7B44DE0080A77E /* OverdueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269F32E71E7B44DE0080A77E /* OverdueCell.xib */; };
 		269F32EC1E7B5BB20080A77E /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F32EB1E7B5BB20080A77E /* CategoriesTableViewController.swift */; };
@@ -38,7 +39,6 @@
 		26C231E51E7AC4AB007AAB8F /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C231E41E7AC4AB007AAB8F /* TaskCell.xib */; };
 		26C231E81E7AC4CB007AAB8F /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231E71E7AC4CB007AAB8F /* TaskCell.swift */; };
 		26C231EE1E7AD645007AAB8F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231ED1E7AD645007AAB8F /* Utils.swift */; };
-		26C231F01E7ADBFB007AAB8F /* UIView+squareToCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231EF1E7ADBFB007AAB8F /* UIView+squareToCircle.swift */; };
 		26C231F21E7AE553007AAB8F /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C231F11E7AE553007AAB8F /* CategoryCell.xib */; };
 		26C231F41E7AE5EA007AAB8F /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231F31E7AE5EA007AAB8F /* CategoryCell.swift */; };
 		26C231FE1E7AFC81007AAB8F /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231FC1E7AFC81007AAB8F /* Category+CoreDataClass.swift */; };
@@ -85,6 +85,7 @@
 		269076DD1E77F4AF001E4BCA /* DueDateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DueDateTableViewController.swift; sourceTree = "<group>"; };
 		269076DF1E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCategoryTableViewController.swift; sourceTree = "<group>"; };
 		269076E11E77F54B001E4BCA /* CreateCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCategoryTableViewController.swift; sourceTree = "<group>"; };
+		269E49691E7C185200837B05 /* GlobalTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalTimer.swift; sourceTree = "<group>"; };
 		269F32E61E7B44DE0080A77E /* OverdueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverdueCell.swift; sourceTree = "<group>"; };
 		269F32E71E7B44DE0080A77E /* OverdueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverdueCell.xib; sourceTree = "<group>"; };
 		269F32EB1E7B5BB20080A77E /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +103,6 @@
 		26C231E41E7AC4AB007AAB8F /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
 		26C231E71E7AC4CB007AAB8F /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		26C231ED1E7AD645007AAB8F /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		26C231EF1E7ADBFB007AAB8F /* UIView+squareToCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+squareToCircle.swift"; sourceTree = "<group>"; };
 		26C231F11E7AE553007AAB8F /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		26C231F31E7AE5EA007AAB8F /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		26C231FC1E7AFC81007AAB8F /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataClass.swift"; path = "Task app/Category+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -136,6 +136,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26555F071E7C1DB800906547 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				269076D21E773718001E4BCA /* MainTableViewController.swift */,
+				269076D81E773B35001E4BCA /* NewTaskTableViewController.swift */,
+				269076DF1E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift */,
+				269076DD1E77F4AF001E4BCA /* DueDateTableViewController.swift */,
+				269076DB1E77F4A9001E4BCA /* EditTaskTableViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 		269076951E77362B001E4BCA = {
 			isa = PBXGroup;
 			children = (
@@ -195,11 +207,7 @@
 		269076D41E773A5D001E4BCA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				269076D21E773718001E4BCA /* MainTableViewController.swift */,
-				269076D81E773B35001E4BCA /* NewTaskTableViewController.swift */,
-				269076DF1E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift */,
-				269076DD1E77F4AF001E4BCA /* DueDateTableViewController.swift */,
-				269076DB1E77F4A9001E4BCA /* EditTaskTableViewController.swift */,
+				26555F071E7C1DB800906547 /* Main */,
 				269076D71E773B29001E4BCA /* Settings */,
 			);
 			name = Controller;
@@ -269,10 +277,10 @@
 		26C231DB1E7ABB98007AAB8F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				26C231EC1E7AD602007AAB8F /* Extensions */,
 				26C231D91E7AAF9B007AAB8F /* Colors.swift */,
 				26C231ED1E7AD645007AAB8F /* Utils.swift */,
 				269F32F81E7B707F0080A77E /* StaticStrings.swift */,
+				269E49691E7C185200837B05 /* GlobalTimer.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -295,14 +303,6 @@
 				26C231E71E7AC4CB007AAB8F /* TaskCell.swift */,
 			);
 			name = TaskCell;
-			sourceTree = "<group>";
-		};
-		26C231EC1E7AD602007AAB8F /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				26C231EF1E7ADBFB007AAB8F /* UIView+squareToCircle.swift */,
-			);
-			name = Extensions;
 			sourceTree = "<group>";
 		};
 		26C231F51E7AE5ED007AAB8F /* CategoryCell */ = {
@@ -467,6 +467,7 @@
 				26D5E8921E7B3A540032E309 /* CompletedTaskCell.swift in Sources */,
 				269076E01E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift in Sources */,
 				269F32FF1E7BF9070080A77E /* Notifications.swift in Sources */,
+				269E496A1E7C185200837B05 /* GlobalTimer.swift in Sources */,
 				269076D61E773A6B001E4BCA /* SettingsTableViewController.swift in Sources */,
 				269F32EC1E7B5BB20080A77E /* CategoriesTableViewController.swift in Sources */,
 				269076D91E773B35001E4BCA /* NewTaskTableViewController.swift in Sources */,
@@ -476,7 +477,6 @@
 				269F32F31E7B6DC90080A77E /* SortTasksByTableViewController.swift in Sources */,
 				26C231D21E7AA818007AAB8F /* DatabaseController.swift in Sources */,
 				26C231FF1E7AFC81007AAB8F /* Category+CoreDataProperties.swift in Sources */,
-				26C231F01E7ADBFB007AAB8F /* UIView+squareToCircle.swift in Sources */,
 				269F32F91E7B707F0080A77E /* StaticStrings.swift in Sources */,
 				26C231D61E7AA96E007AAB8F /* TaskDataManager.swift in Sources */,
 				269076DE1E77F4AF001E4BCA /* DueDateTableViewController.swift in Sources */,

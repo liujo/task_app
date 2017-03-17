@@ -14,4 +14,6 @@ struct StaticStrings {
     static var sortTasksOptions = ["Title", "Due Date"]
     
     static var receiveNotificationsDefaulsKey = "receiveNotificationsDefaulsKey"
+    
+    static var refreshMainVCNotificationIdentifier = "refreshMainVCNotificationIdentifier"
 }

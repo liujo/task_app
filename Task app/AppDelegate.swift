@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         firstLaunchSetup()
-        
+        GlobalTimer.sharedInstance.startTimer()
         
         return true
     }
