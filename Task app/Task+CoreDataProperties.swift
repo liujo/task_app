@@ -21,5 +21,6 @@ extension Task {
     @NSManaged public var showAlert: Bool
     @NSManaged public var isCompleted: Bool
     @NSManaged public var category: Category?
+    @NSManaged public var hasDueDate: Bool
 
 }

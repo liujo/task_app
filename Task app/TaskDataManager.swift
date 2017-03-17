@@ -21,6 +21,19 @@ class TaskDataManager {
         
         let fetchRequest:NSFetchRequest<Task> = Task.fetchRequest()
         
+        var sortDescriptors = [NSSortDescriptor]()
+        let titleDescriptor = NSSortDescriptor(key: "title", ascending: true)
+        let dueDateDescriptor = NSSortDescriptor(key: "dueDate", ascending: true)
+        let hasDueDateDescriptor = NSSortDescriptor(key: "hasDueDate", ascending: false)
+        
+        if UserDefaults.standard.string(forKey: StaticStrings.sortTasksUserDefaultsKey) == "Title" {
+            sortDescriptors = [titleDescriptor]
+        } else {
+            sortDescriptors = [hasDueDateDescriptor, dueDateDescriptor, titleDescriptor]
+        }
+        
+        fetchRequest.sortDescriptors = sortDescriptors
+        
         do{
             let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
             return searchResults
@@ -41,6 +54,12 @@ class TaskDataManager {
         task.category = category
         task.isCompleted = false
         
+        if dueDate != nil {
+            task.hasDueDate = true
+        } else {
+            task.hasDueDate = false
+        }
+        
         DatabaseController.saveContext()
         
     }
@@ -51,6 +70,13 @@ class TaskDataManager {
         task.dueDate = dueDate
         task.showAlert = showAlert
         task.category = category
+        
+        if dueDate != nil {
+            task.hasDueDate = true
+        } else {
+            task.hasDueDate = false
+        }
+        
         DatabaseController.saveContext()
         
     }
