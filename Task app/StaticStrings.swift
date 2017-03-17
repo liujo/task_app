@@ -10,7 +10,8 @@ import Foundation
 
 struct StaticStrings {
     
-    
     static var sortTasksUserDefaultsKey = "sortTasksKey"
     static var sortTasksOptions = ["Title", "Due Date"]
+    
+    static var receiveNotificationsDefaulsKey = "receiveNotificationsDefaulsKey"
 }

@@ -624,6 +624,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bAD-te-pct">
                                                     <rect key="frame" x="310" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="notificationsSwitchAction:" destination="UCU-GB-CPn" eventType="valueChanged" id="dw5-BV-DGj"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -650,6 +653,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="notificationsSwitch" destination="bAD-te-pct" id="CAc-hK-JBW"/>
                         <outlet property="sortTasksByLabel" destination="VmH-xt-umd" id="HyC-Vq-hbS"/>
                     </connections>
                 </tableViewController>
@@ -1024,8 +1028,8 @@
         <image name="btn-settings" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mx8-3A-cb7"/>
+        <segue reference="PpE-oz-can"/>
+        <segue reference="9A9-vz-o1V"/>
         <segue reference="Kgk-nW-hPz"/>
-        <segue reference="gfe-su-fEi"/>
     </inferredMetricsTieBreakers>
 </document>

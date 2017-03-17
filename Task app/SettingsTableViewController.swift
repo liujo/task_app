@@ -13,9 +13,13 @@ class SettingsTableViewController: UITableViewController {
     let defaults = UserDefaults.standard
     
     @IBOutlet weak var sortTasksByLabel: UILabel!
+    @IBOutlet weak var notificationsSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        notificationsSwitch.isOn = defaults.bool(forKey: StaticStrings.receiveNotificationsDefaulsKey)
+        
         
     }
     
@@ -31,6 +35,14 @@ class SettingsTableViewController: UITableViewController {
         
     }
     
+    @IBAction func notificationsSwitchAction(_ sender: UISwitch) {
+        
+        defaults.set(sender.isOn, forKey: StaticStrings.receiveNotificationsDefaulsKey)
+        if sender.isOn == false {
+            Notifications.sharedInstance.cancelAllNotifications()
+        }
+        
+    }
     
 
 }

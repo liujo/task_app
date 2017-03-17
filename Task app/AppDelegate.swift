@@ -8,17 +8,20 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         firstLaunchSetup()
+        
         
         return true
     }
@@ -33,6 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             CategoryDataManager.sharedInstance.saveInitialFourCategories()
             defaults.set(false, forKey: isInitialLaunch)
             defaults.set(StaticStrings.sortTasksOptions[0], forKey: StaticStrings.sortTasksUserDefaultsKey)
+            defaults.set(true, forKey: StaticStrings.receiveNotificationsDefaulsKey)
+            Notifications.sharedInstance.requestUserAuthorization()
             
         }
         

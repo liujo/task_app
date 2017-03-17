@@ -11,6 +11,8 @@ import CoreData
 
 class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
 
+    let defaults = UserDefaults.standard
+    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var categoryCircle: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -52,6 +54,11 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
 
         titleTextField.delegate = self
         category = CategoryDataManager.sharedInstance.getCategoryAt(index: 0)
+        if defaults.bool(forKey: StaticStrings.receiveNotificationsDefaulsKey) {
+            showAlertSwitch.isEnabled = true
+        } else {
+            showAlertSwitch.isEnabled = false
+        }
         
     }
     

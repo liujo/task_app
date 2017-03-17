@@ -11,6 +11,7 @@ import UIKit
 class EditTaskTableViewController: UITableViewController, UITextFieldDelegate {
     
     var task: Task!
+    let defaults = UserDefaults.standard
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var categoryCircle: UIImageView!
@@ -64,7 +65,13 @@ class EditTaskTableViewController: UITableViewController, UITextFieldDelegate {
         titleTextField.text = task.title
         category = task.category
         dueDate = task.dueDate
-        showAlertSwitch.isOn = task.showAlert
+        if defaults.bool(forKey: StaticStrings.receiveNotificationsDefaulsKey) {
+            showAlertSwitch.isOn = task.showAlert
+            showAlertSwitch.isEnabled = true
+        } else {
+            showAlertSwitch.isOn = false
+            showAlertSwitch.isEnabled = false
+        }
         
     }
     

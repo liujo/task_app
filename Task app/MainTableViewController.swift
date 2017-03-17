@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class MainTableViewController: UITableViewController {
     
@@ -53,8 +54,8 @@ class MainTableViewController: UITableViewController {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "completedCell", for: indexPath) as! CompletedTaskCell
             cell.title.text = task.title
-            cell.category.text = task.category?.title
-            if let color = task.category?.color as? UIColor {
+            cell.category.text = task.category.title
+            if let color = task.category.color as? UIColor {
                 cell.fullCircleImage.tintColor = color
                 cell.circleImage.tintColor = color
             }
@@ -69,8 +70,8 @@ class MainTableViewController: UITableViewController {
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "overdueCell", for: indexPath) as! OverdueCell
                 cell.title.text = task.title
-                cell.category.text = task.category?.title
-                if let color = task.category?.color as? UIColor {
+                cell.category.text = task.category.title
+                if let color = task.category.color as? UIColor {
                     cell.category.textColor = color
                     cell.circleImage.tintColor = color
                 }
@@ -97,9 +98,9 @@ class MainTableViewController: UITableViewController {
             cell.circleSeparator.isHidden = true
         }
         
-        cell.category.text = task.category?.title
+        cell.category.text = task.category.title
         
-        if let color = task.category?.color as? UIColor {
+        if let color = task.category.color as? UIColor {
             cell.category.textColor = color
             cell.completeButtonImage.tintColor = color
         }

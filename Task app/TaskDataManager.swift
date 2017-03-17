@@ -53,9 +53,17 @@ class TaskDataManager {
         task.showAlert = showAlert
         task.category = category
         task.isCompleted = false
+        let id = UUID().uuidString
+        task.id = id
         
         if dueDate != nil {
+            
             task.hasDueDate = true
+            
+            if showAlert {
+                Notifications.sharedInstance.setNotification(taskTitle: title, categoryTitle: category.title!, date: dueDate!, taskID: id)
+            }
+            
         } else {
             task.hasDueDate = false
         }
@@ -72,9 +80,16 @@ class TaskDataManager {
         task.category = category
         
         if dueDate != nil {
+            
             task.hasDueDate = true
+            
+            if showAlert {
+                Notifications.sharedInstance.setNotification(taskTitle: title, categoryTitle: category.title!, date: dueDate!, taskID: task.id)
+            }
+            
         } else {
             task.hasDueDate = false
+            Notifications.sharedInstance.cancelNotificationWith(taskID: task.id)
         }
         
         DatabaseController.saveContext()
@@ -84,6 +99,7 @@ class TaskDataManager {
     func complete(task: Task) {
         
         task.isCompleted = true
+        Notifications.sharedInstance.cancelNotificationWith(taskID: task.id)
         DatabaseController.saveContext()
         
     }
@@ -91,6 +107,9 @@ class TaskDataManager {
     func uncomplete(task: Task) {
         
         task.isCompleted = false
+        if task.dueDate != nil && task.showAlert {
+            Notifications.sharedInstance.setNotification(taskTitle: task.title, categoryTitle: task.category.title!, date: task.dueDate!, taskID: task.id)
+        }
         DatabaseController.saveContext()
         
     }
@@ -98,6 +117,7 @@ class TaskDataManager {
     func deleteTask(task: Task) {
         
         DatabaseController.getContext().delete(task)
+        Notifications.sharedInstance.cancelNotificationWith(taskID: task.id)
         DatabaseController.saveContext()
         
     }
