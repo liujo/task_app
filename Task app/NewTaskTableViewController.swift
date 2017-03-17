@@ -141,6 +141,7 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
 extension NewTaskTableViewController: ChooseCategoryVCDelegate {
     
     func updateCategoryIndex(index: Int) {
+        
         self.category = CategoryDataManager.sharedInstance.getCategoryAt(index: index)
         
     }

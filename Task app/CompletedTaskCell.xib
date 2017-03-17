@@ -38,7 +38,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usi-0e-K5f">
                             <rect key="frame" x="0.0" y="0.0" width="50" height="75"/>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn-circle" translatesAutoresizingMaskIntoConstraints="NO" id="gb9-Wn-2e4">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn-circle" translatesAutoresizingMaskIntoConstraints="NO" id="gb9-Wn-2e4">
                             <rect key="frame" x="10" y="23" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="gb9-Wn-2e4" secondAttribute="height" multiplier="1:1" id="6Mn-Hj-eGL"/>

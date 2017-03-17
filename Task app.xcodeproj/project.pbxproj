@@ -161,12 +161,12 @@
 			children = (
 				269076A11E77362B001E4BCA /* AppDelegate.swift */,
 				269076A51E77362B001E4BCA /* Main.storyboard */,
+				269F32FE1E7BF9070080A77E /* Notifications.swift */,
 				269076D41E773A5D001E4BCA /* Controller */,
 				26C231BE1E79B831007AAB8F /* Model */,
 				26C231E61E7AC4B3007AAB8F /* View */,
 				26C231DB1E7ABB98007AAB8F /* Helpers */,
 				269076AB1E77362B001E4BCA /* Assets.xcassets */,
-				269F32FE1E7BF9070080A77E /* Notifications.swift */,
 				269076AD1E77362B001E4BCA /* LaunchScreen.storyboard */,
 				269076B01E77362B001E4BCA /* Info.plist */,
 				269076A81E77362B001E4BCA /* Task_app.xcdatamodeld */,

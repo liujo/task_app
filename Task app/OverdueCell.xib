@@ -29,7 +29,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgN-0f-UYs">
                             <rect key="frame" x="0.0" y="0.0" width="50" height="75"/>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn-circle" translatesAutoresizingMaskIntoConstraints="NO" id="UoF-df-h1F">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn-circle" translatesAutoresizingMaskIntoConstraints="NO" id="UoF-df-h1F">
                             <rect key="frame" x="10" y="23" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="UoF-df-h1F" secondAttribute="height" multiplier="1:1" id="LMd-Zn-5bM"/>
