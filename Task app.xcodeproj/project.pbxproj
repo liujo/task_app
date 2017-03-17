@@ -23,6 +23,9 @@
 		269076E21E77F54B001E4BCA /* CreateCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269076E11E77F54B001E4BCA /* CreateCategoryTableViewController.swift */; };
 		269F32E81E7B44DE0080A77E /* OverdueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F32E61E7B44DE0080A77E /* OverdueCell.swift */; };
 		269F32E91E7B44DE0080A77E /* OverdueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269F32E71E7B44DE0080A77E /* OverdueCell.xib */; };
+		269F32EC1E7B5BB20080A77E /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F32EB1E7B5BB20080A77E /* CategoriesTableViewController.swift */; };
+		269F32EF1E7B5C980080A77E /* EditCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F32EE1E7B5C980080A77E /* EditCategoryTableViewController.swift */; };
+		269F32F11E7B605B0080A77E /* ChooseColourTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F32F01E7B605B0080A77E /* ChooseColourTableViewController.swift */; };
 		26C231D21E7AA818007AAB8F /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231D11E7AA818007AAB8F /* DatabaseController.swift */; };
 		26C231D41E7AA964007AAB8F /* CategoryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231D31E7AA964007AAB8F /* CategoryDataManager.swift */; };
 		26C231D61E7AA96E007AAB8F /* TaskDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C231D51E7AA96E007AAB8F /* TaskDataManager.swift */; };
@@ -81,6 +84,9 @@
 		269076E11E77F54B001E4BCA /* CreateCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCategoryTableViewController.swift; sourceTree = "<group>"; };
 		269F32E61E7B44DE0080A77E /* OverdueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverdueCell.swift; sourceTree = "<group>"; };
 		269F32E71E7B44DE0080A77E /* OverdueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverdueCell.xib; sourceTree = "<group>"; };
+		269F32EB1E7B5BB20080A77E /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
+		269F32EE1E7B5C980080A77E /* EditCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCategoryTableViewController.swift; sourceTree = "<group>"; };
+		269F32F01E7B605B0080A77E /* ChooseColourTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseColourTableViewController.swift; sourceTree = "<group>"; };
 		26C231D11E7AA818007AAB8F /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseController.swift; path = "Task app/DatabaseController.swift"; sourceTree = "<group>"; };
 		26C231D31E7AA964007AAB8F /* CategoryDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryDataManager.swift; path = "Task app/CategoryDataManager.swift"; sourceTree = "<group>"; };
 		26C231D51E7AA96E007AAB8F /* TaskDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskDataManager.swift; path = "Task app/TaskDataManager.swift"; sourceTree = "<group>"; };
@@ -196,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				269076D51E773A6B001E4BCA /* SettingsTableViewController.swift */,
-				269076E11E77F54B001E4BCA /* CreateCategoryTableViewController.swift */,
+				269F32ED1E7B5BB50080A77E /* Categories */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -208,6 +214,17 @@
 				269F32E61E7B44DE0080A77E /* OverdueCell.swift */,
 			);
 			name = OverdueCell;
+			sourceTree = "<group>";
+		};
+		269F32ED1E7B5BB50080A77E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				269F32EB1E7B5BB20080A77E /* CategoriesTableViewController.swift */,
+				269076E11E77F54B001E4BCA /* CreateCategoryTableViewController.swift */,
+				269F32EE1E7B5C980080A77E /* EditCategoryTableViewController.swift */,
+				269F32F01E7B605B0080A77E /* ChooseColourTableViewController.swift */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		26C231BE1E79B831007AAB8F /* Model */ = {
@@ -441,6 +458,7 @@
 				26D5E8921E7B3A540032E309 /* CompletedTaskCell.swift in Sources */,
 				269076E01E77F4E4001E4BCA /* ChooseCategoryTableViewController.swift in Sources */,
 				269076D61E773A6B001E4BCA /* SettingsTableViewController.swift in Sources */,
+				269F32EC1E7B5BB20080A77E /* CategoriesTableViewController.swift in Sources */,
 				269076D91E773B35001E4BCA /* NewTaskTableViewController.swift in Sources */,
 				26C231DA1E7AAF9B007AAB8F /* Colors.swift in Sources */,
 				269076E21E77F54B001E4BCA /* CreateCategoryTableViewController.swift in Sources */,
@@ -456,6 +474,8 @@
 				26C231FE1E7AFC81007AAB8F /* Category+CoreDataClass.swift in Sources */,
 				269F32E81E7B44DE0080A77E /* OverdueCell.swift in Sources */,
 				269076D31E773718001E4BCA /* MainTableViewController.swift in Sources */,
+				269F32EF1E7B5C980080A77E /* EditCategoryTableViewController.swift in Sources */,
+				269F32F11E7B605B0080A77E /* ChooseColourTableViewController.swift in Sources */,
 				26C231D41E7AA964007AAB8F /* CategoryDataManager.swift in Sources */,
 				26C231F41E7AE5EA007AAB8F /* CategoryCell.swift in Sources */,
 				26C231E81E7AC4CB007AAB8F /* TaskCell.swift in Sources */,

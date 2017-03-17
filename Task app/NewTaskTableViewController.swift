@@ -12,7 +12,7 @@ import CoreData
 class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var categoryCircle: UIView!
+    @IBOutlet weak var categoryCircle: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var showAlertSwitch: UISwitch!
@@ -21,7 +21,7 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
         
         didSet {
             
-            categoryCircle.backgroundColor = category?.color as! UIColor?
+            categoryCircle.tintColor = category?.color as! UIColor?
             categoryLabel.text = category?.title
             categoryLabel.textColor = category?.color as! UIColor?
             
@@ -51,7 +51,6 @@ class NewTaskTableViewController: UITableViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         titleTextField.delegate = self
-        categoryCircle = categoryCircle.squareToCircle()
         category = CategoryDataManager.sharedInstance.getCategoryAt(index: 0)
         
     }

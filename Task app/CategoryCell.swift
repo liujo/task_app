@@ -11,7 +11,7 @@ import UIKit
 
 class CategoryCell: UITableViewCell {
     
-    @IBOutlet weak var circleView: UIView!
+    @IBOutlet weak var circleView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
 }

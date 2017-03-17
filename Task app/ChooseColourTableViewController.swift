@@ -1,48 +1,31 @@
 //
-//  ChooseCategoryTableViewController.swift
+//  ChooseColourTableViewController.swift
 //  Task app
 //
-//  Created by Joseph Liu on 14.03.17.
+//  Created by Joseph Liu on 17.03.17.
 //  Copyright © 2017 Joseph Liu. All rights reserved.
 //
 
 import UIKit
 
-protocol ChooseCategoryVCDelegate {
+protocol ChooseColourVCDelegate {
     
-    func updateCategoryIndex(index: Int)
+    func updateColor(color: UIColor)
     
 }
 
-class ChooseCategoryTableViewController: UITableViewController {
+
+class ChooseColourTableViewController: UITableViewController {
     
-    var delegate: ChooseCategoryVCDelegate?
-    var categories = [Category]()
+    var delegate: ChooseColourVCDelegate?
     var index = Int()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellReuseIdentifier: "cell")
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        fetchData()
-        
-    }
-    
-    func fetchData() {
-        
-        if let data = CategoryDataManager.sharedInstance.requestListOfCategories() {
-            
-            categories = data
-            
-        }
-        
+
     }
 
     // MARK: - Table view data source
@@ -52,16 +35,15 @@ class ChooseCategoryTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        return Colors.colors.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let category = categories[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CategoryCell
-        cell.circleView.tintColor = category.color as! UIColor?
-        cell.titleLabel.text = category.title
-        cell.titleLabel.textColor = category.color as! UIColor?
+        cell.titleLabel.text = Colors.colorNames[indexPath.row]
+        cell.titleLabel.textColor = Colors.colors[indexPath.row]
+        cell.circleView.tintColor = Colors.colors[indexPath.row]
         
         if index == indexPath.row {
             cell.accessoryType = .checkmark
@@ -70,6 +52,7 @@ class ChooseCategoryTableViewController: UITableViewController {
         }
 
         return cell
+    
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -80,12 +63,17 @@ class ChooseCategoryTableViewController: UITableViewController {
             tappedCell?.accessoryType = UITableViewCellAccessoryType.checkmark
             tableView.cellForRow(at: IndexPath(row: index, section: 0))?.accessoryType = .none
             index = indexPath.row
-            delegate?.updateCategoryIndex(index: index)
             
         }
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        delegate?.updateColor(color: Colors.colors[index])
+        
+    }
 
 }

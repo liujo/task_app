@@ -13,7 +13,6 @@ struct Colors {
     
     static var red = UIColor.red
     static var orange = UIColor.orange
-    static var yellow = UIColor.yellow
     static var green = UIColor.green
     static var blue = UIColor.blue
     static var purple = UIColor.purple
@@ -22,6 +21,7 @@ struct Colors {
     static var black = UIColor.black
     static var lightGray = UIColor.lightGray
     
-    static var colors = [red, orange, yellow, green, blue, purple, pink, brown, black, lightGray]
+    static var colors = [red, orange, green, blue, purple, pink, brown, black, lightGray]
+    static var colorNames = ["Red", "Orange", "Green", "Blue", "Purple", "Pink", "Brown", "Black", "Light Gray"]
     
 }

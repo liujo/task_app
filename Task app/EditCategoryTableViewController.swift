@@ -1,43 +1,34 @@
 //
-//  CreateCategoryTableViewController.swift
+//  EditCategoryTableViewController.swift
 //  Task app
 //
-//  Created by Joseph Liu on 14.03.17.
+//  Created by Joseph Liu on 17.03.17.
 //  Copyright © 2017 Joseph Liu. All rights reserved.
 //
 
 import UIKit
 
-class CreateCategoryTableViewController: UITableViewController, UITextFieldDelegate {
+class EditCategoryTableViewController: UITableViewController, UITextFieldDelegate {
+    
+    var category: Category!
 
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var circleView: UIImageView!
-    
-    var color = Colors.blue {
-        
-        didSet {
-            
-            circleView.tintColor = color
-            
-        }
-        
-    }
+    @IBOutlet weak var categoryCircle: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        circleView.tintColor = color
         titleTextField.delegate = self
-        
+        refreshUI()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+    func refreshUI() {
         
-        titleTextField.becomeFirstResponder()
+        titleTextField.text = category.title
+        categoryCircle.tintColor = category.color as! UIColor!
         
     }
-    
+
     //MARK: - UITextField delegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -47,15 +38,11 @@ class CreateCategoryTableViewController: UITableViewController, UITextFieldDeleg
         
     }
 
-    @IBAction func saveButtonAction(_ sender: Any) {
-        
-        CategoryDataManager.sharedInstance.saveCategory(title: titleTextField.text!, color: color)
-        self.dismiss(animated: true, completion: nil)
-        
-    }
+    //MARK: - button action
     
-    @IBAction func cancelButtonAction(_ sender: Any) {
+    @IBAction func doneButtonAction(_ sender: Any) {
         
+        CategoryDataManager.sharedInstance.edit(category: category, withAttribute: titleTextField.text!)
         self.dismiss(animated: true, completion: nil)
         
     }
@@ -67,23 +54,23 @@ class CreateCategoryTableViewController: UITableViewController, UITextFieldDeleg
         
     }
     
-    //MARK: - prepareForSegue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "chooseColourVC" {
             
             let vc = segue.destination as! ChooseColourTableViewController
+            vc.index = Colors.colors.index(of: category.color as! UIColor)!
             vc.delegate = self
-            vc.index = Colors.colors.index(of: color)!
-            
         }
+        
     }
-
 }
 
-extension CreateCategoryTableViewController: ChooseColourVCDelegate {
+extension EditCategoryTableViewController: ChooseColourVCDelegate {
     
     func updateColor(color: UIColor) {
-        self.color = color
+        self.category.color = color
+        refreshUI()
     }
     
 }

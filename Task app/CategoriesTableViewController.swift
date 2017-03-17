@@ -1,24 +1,17 @@
 //
-//  ChooseCategoryTableViewController.swift
+//  CategoriesTableViewController.swift
 //  Task app
 //
-//  Created by Joseph Liu on 14.03.17.
+//  Created by Joseph Liu on 17.03.17.
 //  Copyright © 2017 Joseph Liu. All rights reserved.
 //
 
 import UIKit
 
-protocol ChooseCategoryVCDelegate {
+class CategoriesTableViewController: UITableViewController {
     
-    func updateCategoryIndex(index: Int)
-    
-}
-
-class ChooseCategoryTableViewController: UITableViewController {
-    
-    var delegate: ChooseCategoryVCDelegate?
     var categories = [Category]()
-    var index = Int()
+    var tappedRow = Int()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +33,11 @@ class ChooseCategoryTableViewController: UITableViewController {
         if let data = CategoryDataManager.sharedInstance.requestListOfCategories() {
             
             categories = data
-            
+            tableView.reloadData()
         }
         
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,36 +49,32 @@ class ChooseCategoryTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let category = categories[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CategoryCell
         cell.circleView.tintColor = category.color as! UIColor?
         cell.titleLabel.text = category.title
-        cell.titleLabel.textColor = category.color as! UIColor?
-        
-        if index == indexPath.row {
-            cell.accessoryType = .checkmark
-        } else {
-            cell.accessoryType = .none
-        }
 
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.row != index {
-            
-            let tappedCell = tableView.cellForRow(at: indexPath)
-            tappedCell?.accessoryType = UITableViewCellAccessoryType.checkmark
-            tableView.cellForRow(at: IndexPath(row: index, section: 0))?.accessoryType = .none
-            index = indexPath.row
-            delegate?.updateCategoryIndex(index: index)
-            
-        }
+        tappedRow = indexPath.row
         tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "editCategoryVC", sender: self)
         
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "editCategoryVC" {
+            
+            let navController = segue.destination as! UINavigationController
+            let vc = navController.topViewController as! EditCategoryTableViewController
+            vc.category = categories[tappedRow]
+            
+        }
+        
+    }
 }

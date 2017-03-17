@@ -33,7 +33,7 @@ class CategoryDataManager {
         
     }
     
-    func createCategoryObjectInContext(title: String, color: UIColor, id: Int16) {
+    private func createCategoryObjectInContext(title: String, color: UIColor, id: Int16) {
         
         let category: Category = NSEntityDescription.insertNewObject(forEntityName: entityName, into: DatabaseController.getContext()) as! Category
         category.title = title
@@ -42,10 +42,14 @@ class CategoryDataManager {
         
     }
     
-    func saveCategory(title: String, color: UIColor, id: Int16) {
+    func saveCategory(title: String, color: UIColor) {
         
-        createCategoryObjectInContext(title: title, color: color, id: id)
-        DatabaseController.saveContext()
+        if let categories = requestListOfCategories() {
+            
+            createCategoryObjectInContext(title: title, color: color, id: Int16(categories.count))
+            DatabaseController.saveContext()
+            
+        }
     
     }
     
@@ -55,6 +59,13 @@ class CategoryDataManager {
         createCategoryObjectInContext(title: "Family", color: Colors.green, id: 1)
         createCategoryObjectInContext(title: "Work", color: Colors.orange, id: 2)
         createCategoryObjectInContext(title: "<3", color: Colors.red, id: 3)
+        DatabaseController.saveContext()
+        
+    }
+    
+    func edit(category: Category, withAttribute title: String) {
+        
+        category.title = title
         DatabaseController.saveContext()
         
     }
