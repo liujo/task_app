@@ -13,7 +13,7 @@ class CreateCategoryTableViewController: UITableViewController, UITextFieldDeleg
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var circleView: UIImageView!
     
-    var color = Colors.blue {
+    var color = Colors.red {
         
         didSet {
             

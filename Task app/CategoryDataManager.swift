@@ -55,8 +55,8 @@ class CategoryDataManager {
     
     func saveInitialFourCategories() {
         
-        createCategoryObjectInContext(title: "Personal", color: Colors.blue, id: 0)
-        createCategoryObjectInContext(title: "Family", color: Colors.green, id: 1)
+        createCategoryObjectInContext(title: "Personal", color: Colors.yellow, id: 0)
+        createCategoryObjectInContext(title: "Family", color: Colors.pink, id: 1)
         createCategoryObjectInContext(title: "Work", color: Colors.orange, id: 2)
         createCategoryObjectInContext(title: "<3", color: Colors.red, id: 3)
         DatabaseController.saveContext()
